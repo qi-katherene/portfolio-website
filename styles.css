@@ -1,4 +1,11 @@
 /* =========================
+   GLOBAL CONTENT WIDTH
+   ========================= */
+:root {
+  --side-padding: 40px;  /* controls left/right margins site-wide */
+}
+
+/* =========================
    COLOR VARIABLES
    ========================= */
 :root {
@@ -22,11 +29,14 @@ body {
 }
 
 /* =========================
-   OFFSET FOR FIXED HEADER
+   MAIN CONTENT SECTIONS
    ========================= */
 .section {
-  padding-top: 160px;   /* header height + breathing room */
+  padding-top: 160px;                 /* header offset */
   padding-bottom: 120px;
+  padding-left: var(--side-padding);  /* ✅ same as header */
+  padding-right: var(--side-padding); /* ✅ same as header */
+  box-sizing: border-box;
 }
 
 /* =========================
@@ -45,7 +55,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 40px;   /* FIX: fixed padding instead of % */
+  padding: 12px var(--side-padding); /* ✅ unified margins */
   box-sizing: border-box;
 
   z-index: 1000;
@@ -65,9 +75,9 @@ body {
    CAROUSEL
    ========================= */
 .carousel-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 80px;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
 }
 
 .carousel-track {
@@ -77,13 +87,7 @@ body {
 }
 
 .carousel-card {
-  min-width: 300px;
-  margin: 0 15px;
-  background-color: var(--sage);
-  padding: 40px;
-  border-radius: 20px;
-  cursor: pointer;
-  text-align: center;
+  margin: 0 12px; /* small spacing between cards */
 }
 
 .carousel-btn {

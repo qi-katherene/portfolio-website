@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Katherene Qi | Engineering Portfolio</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Enable smooth scrolling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- =========================
+       FIXED HEADER / NAV BAR
+       ========================= -->
+  <header class="navbar">
+    <div class="nav-left">
+      <h1>Katherene Qi</h1>
+      <p>B.S. Mechanical Engineering</p>
+    </div>
+
+    <!-- Navigation links scroll to sections -->
+    <nav class="nav-right">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+    </nav>
+  </header>
+
+  <!-- =========================
+       PROJECTS SECTION
+       ========================= -->
+  <section id="projects" class="section">
+
+    <!-- Carousel at the top -->
+    <div class="carousel-container">
+
+      <!-- LEFT ARROW -->
+      <button class="carousel-btn" onclick="prevSlide()">&#10094;</button>
+
+      <!-- CAROUSEL TRACK -->
+      <div class="carousel-track">
+
+        <!-- ========= SLIDE 1 ========= -->
+        <div class="carousel-card" onclick="scrollToCategory('engineering')">
+          <h2>Engineering</h2>
+          <p>CAD, manufacturing, testing</p>
+        </div>
+
+        <!-- ========= SLIDE 2 ========= -->
+        <div class="carousel-card" onclick="scrollToCategory('research')">
+          <h2>Research</h2>
+          <p>Analysis & experimentation</p>
+        </div>
+
+        <!-- ========= SLIDE 3 ========= -->
+        <div class="carousel-card" onclick="scrollToCategory('design')">
+          <h2>Design & Fabrication</h2>
+          <p>Textiles, jewelry, modeling</p>
+        </div>
+
+        <!-- ========= SLIDE 4 ========= -->
+        <div class="carousel-card" onclick="scrollToCategory('creative')">
+          <h2>Creative / For Fun</h2>
+          <p>Side projects & art</p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT ARROW -->
+      <button class="carousel-btn" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <!-- =========================
+         PROJECT CATEGORY SECTIONS
+         ========================= -->
+
+    <!-- ===== ENGINEERING ===== -->
+    <div id="engineering" class="project-category">
+      <h2>Engineering Projects</h2>
+
+      <!-- PROJECT CARD -->
+      <div class="project-card">
+        <img src="assets/images/project1.jpg" alt="Project image">
+
+        <div class="project-info">
+          <h3>Project Title</h3>
+          <p>
+            <!-- EDIT THIS BLURB -->
+            Short description of the engineering challenge,
+            tools used, and outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== RESEARCH ===== -->
+    <div id="research" class="project-category">
+      <h2>Research</h2>
+
+      <div class="project-card">
+        <div class="project-info">
+          <h3>Research Topic</h3>
+          <p>
+            <!-- EDIT THIS BLURB -->
+            Explain the research question, methods,
+            and what you learned.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DESIGN ===== -->
+    <div id="design" class="project-category">
+      <h2>Design & Fabrication</h2>
+    </div>
+
+    <!-- ===== CREATIVE ===== -->
+    <div id="creative" class="project-category">
+      <h2>Creative / For Fun</h2>
+    </div>
+
+  </section>
+
+  <!-- =========================
+       ABOUT SECTION
+       ========================= -->
+  <section id="about" class="section about-section">
+
+    <!-- PROFILE IMAGE -->
+    <img src="assets/images/profile.jpg" alt="Profile photo" class="profile-img">
+
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>
+        <!-- EDIT THIS BLURB -->
+        Short personal introduction, interests, and goals.
+      </p>
+
+      <h3>Skills</h3>
+      <p>
+        <!-- EDIT SKILLS -->
+        CAD, SolidWorks, MATLAB, Python, Manufacturing, Testing
+      </p>
+    </div>
+
+  </section>
+
+  <!-- =========================
+       RESUME SECTION
+       ========================= -->
+  <section id="resume" class="section resume-section">
+    <h2>Resume</h2>
+
+    <!-- EMBEDDED PDF -->
+    <iframe src="assets/resume.pdf"></iframe>
+  </section>
+
+  <!-- Link JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

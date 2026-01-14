@@ -133,3 +133,51 @@ body {
   border: 2px solid var(--cream);
   border-radius: 20px;
 }
+
+/* =========================
+   PROJECTS SPLIT LAYOUT
+   ========================= */
+.projects-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left 1/3, right 2/3 */
+  gap: 40px;
+}
+
+/* LEFT SIDEBAR */
+.projects-sidebar h3 {
+  margin-top: 20px;
+  color: var(--rust);
+}
+
+.projects-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.projects-sidebar li {
+  padding: 8px 0;
+  cursor: pointer;
+  color: var(--dark2);
+}
+
+.projects-sidebar li:hover {
+  color: var(--orange);
+}
+
+/* RIGHT DISPLAY PANEL */
+.projects-display {
+  background-color: white;
+  border-radius: 24px;
+  padding: 40px;
+  min-height: 400px;
+}
+
+/* PROJECT VISIBILITY */
+.project-detail {
+  display: none;
+}
+
+.project-detail.active {
+  display: block;
+}
+

@@ -77,53 +77,75 @@
     <!-- =========================
          PROJECT CATEGORY SECTIONS
          ========================= -->
-
-    <!-- ===== ENGINEERING ===== -->
-    <div id="engineering" class="project-category">
-      <h2>Engineering Projects</h2>
-
-      <!-- PROJECT CARD -->
-      <div class="project-card">
-        <img src="assets/images/project1.jpg" alt="Project image">
-
-        <div class="project-info">
-          <h3>Project Title</h3>
+<!-- =========================
+     PROJECTS LAYOUT
+     ========================= -->
+    <div class="projects-layout">
+    
+      <!-- LEFT COLUMN: categories & project titles -->
+      <div class="projects-sidebar">
+    
+        <h3>Engineering</h3>
+        <ul>
+          <li onclick="showProject('eng1')">CAD Assembly Tool</li>
+          <li onclick="showProject('eng2')">3D Printed Test Rig</li>
+        </ul>
+    
+        <h3>Research</h3>
+        <ul>
+          <li onclick="showProject('res1')">Materials Study</li>
+        </ul>
+    
+        <h3>Design & Fabrication</h3>
+        <ul>
+          <li onclick="showProject('des1')">Woven Structure</li>
+        </ul>
+    
+        <h3>Creative / For Fun</h3>
+        <ul>
+          <li onclick="showProject('fun1')">Resin Charms</li>
+        </ul>
+    
+      </div>
+    
+      <!-- RIGHT COLUMN: project details -->
+      <div class="projects-display">
+    
+        <!-- DEFAULT / PLACEHOLDER -->
+        <div class="project-detail active" id="default">
+          <h2>Select a project</h2>
           <p>
-            <!-- EDIT THIS BLURB -->
-            Short description of the engineering challenge,
-            tools used, and outcomes.
+            Click a project name on the left to see details here.
           </p>
         </div>
-      </div>
-    </div>
-
-    <!-- ===== RESEARCH ===== -->
-    <div id="research" class="project-category">
-      <h2>Research</h2>
-
-      <div class="project-card">
-        <div class="project-info">
-          <h3>Research Topic</h3>
+    
+        <!-- ===== ENGINEERING PROJECT ===== -->
+        <div class="project-detail" id="eng1">
+          <h2>CAD Assembly Tool</h2>
           <p>
             <!-- EDIT THIS BLURB -->
-            Explain the research question, methods,
-            and what you learned.
+            Description of the problem, design constraints,
+            software used, and final outcome.
           </p>
         </div>
+    
+        <div class="project-detail" id="eng2">
+          <h2>3D Printed Test Rig</h2>
+          <p>
+            Explain testing methodology and results.
+          </p>
+        </div>
+    
+        <!-- ===== RESEARCH ===== -->
+        <div class="project-detail" id="res1">
+          <h2>Materials Study</h2>
+          <p>
+            Research question, approach, and findings.
+          </p>
+        </div>
+    
       </div>
     </div>
-
-    <!-- ===== DESIGN ===== -->
-    <div id="design" class="project-category">
-      <h2>Design & Fabrication</h2>
-    </div>
-
-    <!-- ===== CREATIVE ===== -->
-    <div id="creative" class="project-category">
-      <h2>Creative / For Fun</h2>
-    </div>
-
-  </section>
 
   <!-- =========================
        ABOUT SECTION

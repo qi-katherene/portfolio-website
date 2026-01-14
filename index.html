@@ -134,3 +134,29 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+       <!-- =========================
+       Clickable Links SECTION
+       ========================= -->
+      <script>
+  // Select all project links
+  const projectLinks = document.querySelectorAll('.categories-column a');
+  const displayColumn = document.getElementById('project-display');
+
+  projectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // prevent default link behavior
+
+      // Get the title and description from data attributes
+      const title = link.getAttribute('data-title');
+      const description = link.getAttribute('data-description');
+
+      // Update the right-hand column
+      displayColumn.innerHTML = `
+        <h2>${title}</h2>
+        <p>${description}</p>
+      `;
+    });
+  });
+</script>
+

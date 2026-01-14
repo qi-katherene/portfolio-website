@@ -1,2 +1,2 @@
-# engineering-portfolio
-Engineering portfolio that contains my past projects, particularly including images.
+# portfolio-website
+To keep of record of projects I've done in the past.

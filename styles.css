@@ -21,23 +21,33 @@ body {
   scroll-behavior: smooth;
 }
 
+/* =========================
+   OFFSET FOR FIXED HEADER
+   ========================= */
 .section {
-  padding: 120px 8%;
+  padding-top: 160px;   /* header height + breathing room */
+  padding-bottom: 120px;
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR (FIXED & CENTERED)
    ========================= */
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+
   background-color: var(--rust);
   color: var(--cream);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 8%;
+
+  padding: 12px 40px;   /* FIX: fixed padding instead of % */
+  box-sizing: border-box;
+
   z-index: 1000;
 }
 

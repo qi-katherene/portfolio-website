@@ -96,6 +96,10 @@ body {
   cursor: pointer;
 }
 
+.carousel-track {
+  max-width: 900px;        /* forces overflow */
+}
+
 /* =========================
    PROJECTS SPLIT LAYOUT
    ========================= */

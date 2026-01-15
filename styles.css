@@ -1,14 +1,23 @@
 /* =========================
    GLOBAL CONTENT WIDTH
    ========================= */
-:root {
+/* :root {
   --side-padding: 40px;  /* controls left/right margins site-wide */
-  --cream: #EEE9DF;
-  --sage: #C9C1B1;
-  --orange: #FFB162;
+  /* --cream: #EEE9DF; */
+  /* --sage: #C9C1B1; */
+  /* --orange: #FFB162;
   --rust: #A35139;
   --dark1: #2C3B4D;
-  --dark2: #1B2632;
+  --dark2: #1B2632; */
+/* }  */
+
+:root {
+  --cream: #F5F0E9;
+  --sage: #D9CBC2;
+  --orange: #E0C58F;
+  --rust: #3C507D;
+  --dark1: #3C507D;
+  --dark2: #112250;
 }
 
 /* =========================

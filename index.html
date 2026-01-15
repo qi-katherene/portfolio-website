@@ -7,7 +7,7 @@
   <!-- Link CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Enable smooth scrolling -->
+  <!-- Responsive viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -22,7 +22,6 @@
       <p>B.S. Mechanical Engineering</p>
     </div>
 
-    <!-- Navigation links scroll to sections -->
     <nav class="nav-right">
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
@@ -35,128 +34,116 @@
        ========================= -->
   <section id="projects" class="section">
 
-    <!-- Carousel at the top -->
+    <!-- Carousel -->
     <div class="carousel-container">
 
-      <!-- LEFT ARROW -->
-      <button class="carousel-btn" onclick="prevSlide()">&#10094;</button>
+      <button class="carousel-btn" type="button" onclick="prevSlide()">&#10094;</button>
 
-      <!-- CAROUSEL TRACK -->
       <div class="carousel-track">
+        <div class="carousel-card" onclick="scrollToProject('Haptic Device')">
+          <h2>Haptic Device</h2>
+          <p>Force feedback & interaction</p>
+        </div>
 
-      <div class="carousel-card" onclick="scrollToProject('Haptic Device')">
-        <h2>Haptic Device</h2>
-        <p>Force feedback & interaction</p>
-      </div>
-    
-      <div class="carousel-card" onclick="scrollToProject('OpenCV Project')">
-        <h2>OpenCV Project</h2>
-        <p>Computer vision</p>
-      </div>
-    
-      <div class="carousel-card" onclick="scrollToProject('4 bar truss')">
-        <h2>4 Bar Truss</h2>
-        <p>Mechanism design</p>
+        <div class="carousel-card" onclick="scrollToProject('OpenCV Project')">
+          <h2>OpenCV Project</h2>
+          <p>Computer vision</p>
+        </div>
+
+        <div class="carousel-card" onclick="scrollToProject('4 Bar Truss')">
+          <h2>4 Bar Truss</h2>
+          <p>Mechanism design</p>
+        </div>
+
+        <div class="carousel-card" onclick="scrollToProject('Bawp it')">
+          <h2>Bawp It</h2>
+          <p>Interactive electronics</p>
+        </div>
+
+        <div class="carousel-card" onclick="scrollToProject('Material Testing')">
+          <h2>Material Testing</h2>
+          <p>Experimental analysis</p>
+        </div>
       </div>
 
-      <div class="carousel-card" onclick="scrollToProject('Bawp it')">
-        <h2>Bawp It</h2>
-        <p>Interactive electronics</p>
-      </div>
-    
-      <div class="carousel-card" onclick="scrollToProject('Material Testing')">
-        <h2>Material Testing</h2>
-        <p>Experimental analysis</p>
-      </div>
-    
-    </div>
-
-
-      <!-- RIGHT ARROW -->
-      <button class="carousel-btn" onclick="nextSlide()">&#10095;</button>
+      <button class="carousel-btn" type="button" onclick="nextSlide()">&#10095;</button>
     </div>
 
     <!-- =========================
-         PROJECT CATEGORY SECTIONS
+         PROJECT CATEGORIES
          ========================= -->
-<div class="projects-container">
-  <!-- Left column: Categories -->
-  <div class="categories-column">
-    
-    <!-- Engineering -->
-    <div class="category">
-      <h3>Engineering</h3>
-      <ul>
-        <li><a href="#" data-title="Hiking Chair" data-description="Description of Hiking Chair project.">Hiking Chair</a></li>
-        <li><a href="#" data-title="Material Testing" data-description="Description of Material Testing project.">Material Testing</a></li>
-        <li><a href="#" data-title="OpenCV Project" data-description="Description of OpenCV project.">OpenCV Project</a></li>
-        <li><a href="#" data-title="Bicycle Crank" data-description="Description of Bicycle Crank project.">Bicycle Crank</a></li>
-        <li><a href="#" data-title="Mobot" data-description="Description of Mobot project.">Mobot</a></li>
-        <li><a href="#" data-title="Coat Rack" data-description="Description of Coat Rack project.">Coat Rack</a></li>
-        <li><a href="#" data-title="Truss Design" data-description="Description of Truss Design project.">Truss Design</a></li>
-        <li><a href="#" data-title="4 Bar Truss" data-description="Description of 4 bar truss project.">4 bar truss</a></li>
-        <li><a href="#" data-title="Byte Box" data-description="Description of Byte Box project.">Byte Box</a></li>
-        <li><a href="#" data-title="Bawp it" data-description="Description of Bawp it project.">Bawp it</a></li>
-      </ul>
-    </div>
+    <div class="projects-container">
 
-    <!-- Media Design -->
-    <div class="category">
-      <h3>Media Design</h3>
-      <ul>
-        <li><a href="#" data-title="Merchandise" data-description="Description of Merchandise project.">Merchandise</a></li>
-        <li><a href="#" data-title="Metal Jewelry" data-description="Description of Metal Jewelry project.">Metal Jewelry</a></li>
-        <li><a href="#" data-title="Textiles" data-description="Description of Textiles project.">Textiles</a></li>
-      </ul>
-    </div>
+      <!-- LEFT COLUMN -->
+      <div class="categories-column">
 
-    <!-- Research -->
-    <div class="category">
-      <h3>Research</h3>
-      <ul>
-        <li><a href="#" data-title="Haptic Device" data-description="Description of Haptic Device project.">Haptic Device</a></li>
-        <li><a href="#" data-title="Material Testing" data-description="Description of Material Testing project.">Material Testing</a></li>
-      </ul>
-    </div>
+        <div class="category">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="#" data-title="Hiking Chair" data-description="Description of Hiking Chair project.">Hiking Chair</a></li>
+            <li><a href="#" data-title="Material Testing" data-description="Description of Material Testing project.">Material Testing</a></li>
+            <li><a href="#" data-title="OpenCV Project" data-description="Description of OpenCV project.">OpenCV Project</a></li>
+            <li><a href="#" data-title="Bicycle Crank" data-description="Description of Bicycle Crank project.">Bicycle Crank</a></li>
+            <li><a href="#" data-title="Mobot" data-description="Description of Mobot project.">Mobot</a></li>
+            <li><a href="#" data-title="Coat Rack" data-description="Description of Coat Rack project.">Coat Rack</a></li>
+            <li><a href="#" data-title="Truss Design" data-description="Description of Truss Design project.">Truss Design</a></li>
+            <li><a href="#" data-title="4 Bar Truss" data-description="Description of 4 Bar Truss project.">4 Bar Truss</a></li>
+            <li><a href="#" data-title="Byte Box" data-description="Description of Byte Box project.">Byte Box</a></li>
+            <li><a href="#" data-title="Bawp it" data-description="Description of Bawp it project.">Bawp it</a></li>
+          </ul>
+        </div>
 
-    <!-- Projects for Fun -->
-    <div class="category">
-      <h3>Projects for Fun</h3>
-      <ul>
-        <li><a href="#" data-title="HuggleStand" data-description="Description of HuggleStand project.">HuggleStand</a></li>
-        <li><a href="#" data-title="Convertabox" data-description="Description of Convertabox project.">Convertabox</a></li>
-        <li><a href="#" data-title="Clippy" data-description="Description of Clippy project.">Clippy</a></li>
-      </ul>
+        <div class="category">
+          <h3>Media Design</h3>
+          <ul>
+            <li><a href="#" data-title="Merchandise" data-description="Description of Merchandise project.">Merchandise</a></li>
+            <li><a href="#" data-title="Metal Jewelry" data-description="Description of Metal Jewelry project.">Metal Jewelry</a></li>
+            <li><a href="#" data-title="Textiles" data-description="Description of Textiles project.">Textiles</a></li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h3>Research</h3>
+          <ul>
+            <li><a href="#" data-title="Haptic Device" data-description="Description of Haptic Device project.">Haptic Device</a></li>
+            <li><a href="#" data-title="Material Testing" data-description="Description of Material Testing project.">Material Testing</a></li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h3>Projects for Fun</h3>
+          <ul>
+            <li><a href="#" data-title="HuggleStand" data-description="Description of HuggleStand project.">HuggleStand</a></li>
+            <li><a href="#" data-title="Convertabox" data-description="Description of Convertabox project.">Convertabox</a></li>
+            <li><a href="#" data-title="Clippy" data-description="Description of Clippy project.">Clippy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="project-display-column" id="project-display">
+        <h2>Welcome!</h2>
+        <p>Click a project on the left to see its description here.</p>
+      </div>
+
     </div>
-  </div>
-  
-  <!-- RIGHT COLUMN: Project description -->
-  <div class="project-display-column" id="project-display">
-    <h2>Welcome!</h2>
-    <p>Click a project on the left to see its description here.</p>
-  </div>
-</div>
+  </section>
 
   <!-- =========================
        ABOUT SECTION
        ========================= -->
   <section id="about" class="section about-section">
 
-    <!-- PROFILE IMAGE -->
-    <img src="assets/images/linkedIn_photo_2026.png" alt="Profile photo" class="profile-img">
+    <img src="assets/images/linkedIn_photo_2026.png"
+         alt="Profile photo"
+         class="profile-img">
 
     <div class="about-content">
       <h2>About Me</h2>
-      <p>
-        <!-- EDIT THIS BLURB -->
-        Short personal introduction, interests, and goals.
-      </p>
+      <p>Short personal introduction, interests, and goals.</p>
 
       <h3>Skills</h3>
-      <p>
-        <!-- EDIT SKILLS -->
-        CAD, SolidWorks, MATLAB, Python, Manufacturing, Testing
-      </p>
+      <p>CAD, SolidWorks, MATLAB, Python, Manufacturing, Testing</p>
     </div>
 
   </section>
@@ -166,12 +153,11 @@
        ========================= -->
   <section id="resume" class="section resume-section">
     <h2>Resume</h2>
-
-    <!-- EMBEDDED PDF -->
-    <iframe src="assets/resume.pdf"></iframe>
+    <iframe src="assets/resume.pdf" title="Resume PDF"></iframe>
   </section>
 
-  <!-- Link JavaScript -->
+  <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>

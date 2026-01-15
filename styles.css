@@ -3,12 +3,6 @@
    ========================= */
 :root {
   --side-padding: 40px;  /* controls left/right margins site-wide */
-}
-
-/* =========================
-   COLOR VARIABLES
-   ========================= */
-:root {
   --cream: #EEE9DF;
   --sage: #C9C1B1;
   --orange: #FFB162;
@@ -34,8 +28,8 @@ body {
 .section {
   padding-top: 160px;                 /* header offset */
   padding-bottom: 120px;
-  padding-left: var(--side-padding);  /* ✅ same as header */
-  padding-right: var(--side-padding); /* ✅ same as header */
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
   box-sizing: border-box;
 }
 
@@ -47,17 +41,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-
   background-color: var(--rust);
   color: var(--cream);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 12px var(--side-padding); /* ✅ unified margins */
+  padding: 12px var(--side-padding);
   box-sizing: border-box;
-
   z-index: 1000;
 }
 
@@ -75,19 +65,28 @@ body {
    CAROUSEL
    ========================= */
 .carousel-container {
-  margin-left: 0;
-  margin-right: 0;
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
   box-sizing: border-box;
 }
 
 .carousel-track {
   display: flex;
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto;   /* allows horizontal scroll */
+  gap: 20px;          /* spacing between cards */
+  scroll-behavior: smooth;
+  flex: 1;
 }
 
 .carousel-card {
-  margin: 0 12px; /* small spacing between cards */
+  flex: 0 0 auto;     /* prevent shrinking */
+  width: 200px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .carousel-btn {
@@ -98,22 +97,51 @@ body {
 }
 
 /* =========================
-   PROJECTS
+   PROJECTS SPLIT LAYOUT
    ========================= */
-.project-category {
+.projects-container {
+  display: flex;
+  gap: 40px;
   margin-bottom: 80px;
 }
 
-.project-card {
-  display: flex;
-  gap: 30px;
+/* LEFT SIDEBAR */
+.categories-column {
+  flex: 0 0 35%;
+}
+
+.categories-column h3 {
+  margin-top: 20px;
+  color: var(--rust);
+}
+
+.categories-column ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.categories-column li {
+  padding: 8px 0;
+  cursor: pointer;
+  color: var(--dark2);
+}
+
+.categories-column li:hover {
+  color: var(--orange);
+}
+
+/* RIGHT DISPLAY PANEL */
+.project-display-column {
+  flex: 0 0 65%;
   background-color: white;
-  padding: 30px;
-  border-radius: 20px;
+  border-radius: 24px;
+  padding: 40px;
+  min-height: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* =========================
-   ABOUT
+   ABOUT SECTION
    ========================= */
 .about-section {
   display: flex;
@@ -125,11 +153,12 @@ body {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background-color: transparent; /* var(--orange) */
+  object-fit: cover;
+  background-color: transparent;
 }
 
 /* =========================
-   RESUME
+   RESUME SECTION
    ========================= */
 .resume-section iframe {
   width: 100%;
@@ -138,49 +167,3 @@ body {
   border-radius: 20px;
 }
 
-/* =========================
-   PROJECTS SPLIT LAYOUT
-   ========================= */
-.projects-layout {
-  display: grid;
-  grid-template-columns: 35% 65%; /* left sidebar 35%, right display 65% */
-  gap: 40px;
-}
-
-/* LEFT SIDEBAR */
-.projects-sidebar h3 {
-  margin-top: 20px;
-  color: var(--rust);
-}
-
-.projects-sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.projects-sidebar li {
-  padding: 8px 0;
-  cursor: pointer;
-  color: var(--dark2);
-}
-
-.projects-sidebar li:hover {
-  color: var(--orange);
-}
-
-/* RIGHT DISPLAY PANEL */
-.projects-display {
-  background-color: white;
-  border-radius: 24px;
-  padding: 40px;
-  min-height: 400px;
-}
-
-/* PROJECT VISIBILITY */
-.project-detail {
-  display: none;
-}
-
-.project-detail.active {
-  display: block;
-}

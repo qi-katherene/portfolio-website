@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =========================
      CAROUSEL
      ========================= */
-
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.carousel-card');
 
   function nextSlide() {
     if (!track || cards.length === 0) return;
-
     const cardWidth = cards[0].offsetWidth + 20;
     track.scrollLeft += cardWidth;
 
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function prevSlide() {
     if (!track || cards.length === 0) return;
-
     const cardWidth = cards[0].offsetWidth + 20;
     track.scrollLeft -= cardWidth;
 
@@ -29,47 +26,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+
   /* =========================
-     SCROLL FROM CAROUSEL → LIST
+     PROJECT LINK HANDLER
      ========================= */
+  const projectLinks = document.querySelectorAll('.categories-column a');
+  const displayColumn = document.getElementById('project-display');
+  const projectsContainer = document.querySelector('.projects-container');
+  const header = document.querySelector('.navbar');
 
-  function scrollToProject(projectTitle) {
-    const links = document.querySelectorAll('.categories-column a');
+  function showProject(title, description) {
+    // Update right panel
+    displayColumn.innerHTML = `
+      <h2>${title}</h2>
+      <p>${description}</p>
+    `;
 
-    links.forEach(link => {
-      if (link.dataset.title === projectTitle) {
-        link.click();
-        link.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+    // Scroll page to projects container top (accounting for fixed header)
+    const headerHeight = header.offsetHeight;
+    const containerTop = projectsContainer.offsetTop;
+    window.scrollTo({
+      top: containerTop - headerHeight - 20, // optional extra spacing
+      behavior: 'smooth'
     });
   }
 
-  /* =========================
-     LEFT COLUMN PROJECT CLICKS
-     ========================= */
-
-  const projectLinks = document.querySelectorAll('.categories-column a');
-  const displayColumn = document.getElementById('project-display');
-
+  // Sidebar link clicks
   projectLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      const title = link.dataset.title;
-      const description = link.dataset.description;
-
-      displayColumn.innerHTML = `
-        <h2>${title}</h2>
-        <p>${description}</p>
-      `;
+      showProject(link.dataset.title, link.dataset.description);
     });
   });
 
   /* =========================
-     EXPOSE FUNCTIONS TO HTML
+     CAROUSEL CARD CLICKS
      ========================= */
-  window.nextSlide = nextSlide;
-  window.prevSlide = prevSlide;
-  window.scrollToProject = scrollToProject;
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('h2').innerText;
+      // Find matching description from sidebar links
+      const matchingLink = Array.from(projectLinks).find(
+        l => l.dataset.title === title
+      );
+      if (matchingLink) {
+        showProject(matchingLink.dataset.title, matchingLink.dataset.description);
+      }
+    });
+  });
 
 });

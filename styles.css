@@ -68,15 +68,24 @@ body {
   display: flex;
   align-items: center;
   margin: 40px 0;
+
+  width: 100%;
   box-sizing: border-box;
 }
 
 .carousel-track {
   display: flex;
-  overflow-x: auto;   /* allows horizontal scroll */
-  gap: 20px;          /* spacing between cards */
-  scroll-behavior: smooth;
   flex: 1;
+  gap: 20px;
+
+  overflow-x: auto;           /* enables horizontal scrolling */
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;      /* Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;              /* Chrome / Safari */
 }
 
 .carousel-card {
@@ -97,22 +106,27 @@ body {
 }
 
 .carousel-track {
-  max-width: 900px;        /* forces overflow */
+  width: 100%;
+  max-width: none;
 }
 
 /* =========================
    PROJECTS SPLIT LAYOUT
    ========================= */
+
 .projects-container {
   display: flex;
-  gap: 40px;
-  margin-bottom: 80px;
+  gap: 24px;              /* gap between left and right col */
+  width: 100%;
+  box-sizing: border-box;
+
   align-items: flex-start;
 }
 
+
 /* LEFT SIDEBAR */
 .categories-column {
-  flex: 0 0 35%;
+  flex: 0 0 30%;
 }
 
 .categories-column h3 {
@@ -137,13 +151,27 @@ body {
 
 /* RIGHT DISPLAY PANEL */
 .project-display-column {
-  flex: 0 0 65%;
+  flex: 1;         /* fills remaining space */
   background-color: white;
   border-radius: 24px;
   padding: 40px;
   min-height: 400px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  max-width: 100%;
 }
+
+@media (max-width: 900px) {
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .categories-column,
+  .project-display-column {
+    width: 100%;
+  }
+}
+
 
 /* =========================
    ABOUT SECTION
